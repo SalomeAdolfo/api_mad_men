@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('primer_apellido',50);
             $table->string('segundo_apellido',40);
-            $table->string('sexo',['femenino', 'masculino', 'prefiero no decirlo']);
+            $table->enum('sexo',['masculino','femenino','prefiero no decirlo']);
             $table->date('fecha_nacimiento');
             $table->string('numero_telefono',10);
             $table->string('email')->unique();

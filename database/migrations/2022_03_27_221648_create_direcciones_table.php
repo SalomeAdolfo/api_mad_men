@@ -14,8 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('direcciones', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->smallIncrements('id');
+            $table->string('estado', 50);
+            $table->string('municipio', 50);
+            $table->string('calle', 100);
+            $table->string('codigo_postal',5);
+            $table->string('numero_interior',5);
+            $table->string('numero_exterior',5);
+            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('psicologo_id');
+
+            $table->foreign('psicologo_id')->references('id')->on('psicologos');
+            $table->foreign('usuario_id')->references('id')->on('users');
         });
     }
 

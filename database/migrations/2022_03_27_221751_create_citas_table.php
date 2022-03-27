@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->date('fecha_consulta');
+            $table->enum('estatus', ['activa','inactiva']);
+            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('psicologo_id');
+
+            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->foreign('psicologo_id')->references('id')->on('psicologos');
         });
     }
 
