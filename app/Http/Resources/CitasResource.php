@@ -15,7 +15,11 @@ class CitasResource extends JsonResource
     public function toArray($request)
     {
         return [
-        
+            'id' => $this->id,
+            'fecha_consulta' => $this->fecha_consulta,
+            'estatus' => $this->estatus,
+            'usuario_id' => $this->usuario_id,
+            'psicologo_id' => $this->psicologo_id,
         ];
     }
 }

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resources\UsuariosResource;
-use App\Models\Usuarios;
+use App\Http\Resources\CitasResource;
+use App\Models\Citas;
 
 class CitasController extends Controller
 {
@@ -16,7 +16,7 @@ class CitasController extends Controller
      */
     public function index()
     {
-       //
+       return CitasResource::collection(Citas::all());
     }
 
     /**
@@ -27,7 +27,8 @@ class CitasController extends Controller
      */
     public function store(Request $request)
     {
-     //
+     $cita = Citas::create($request->all());
+     return new CitasResource($cita);
     }
 
     /**
@@ -38,7 +39,7 @@ class CitasController extends Controller
      */
     public function show($id)
     {
-       //
+       return new CitasResource(Citas::findOrFail($id));
     }
 
     /**
@@ -50,7 +51,10 @@ class CitasController extends Controller
      */
     public function update(Request $request, $id)
     {
-       //
+       $request -> validate(Citas::reglasValidacion());
+       $cita = Citas::findOrFail($id);
+       $cita -> update($request->all());
+       return new CitasResource($cita);
     }
 
     /**
@@ -61,6 +65,10 @@ class CitasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Citas::findOrFail($id);
+        $delete->delete();
+        return response() -> json([
+           "message" => "Datos borrados"
+        ],202);
     }
 }

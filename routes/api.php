@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\CitasController;
+use App\Http\Controllers\API\DireccionesController;
 use App\Http\Controllers\API\EspecialidadesController;
 use App\Http\Controllers\API\PsicologosController;
 use App\Http\Controllers\API\UsuariosController;
@@ -21,6 +23,8 @@ use App\Models\User;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::apiResource('direcciones', DireccionesController::class)->names('api-direcciones');
+Route::apiResource('citas', CitasController::class)->names('api-citas');
 Route::apiResource('especialidades', EspecialidadesController::class)-> names('api-especialidades');
 Route::apiResource('psicologos', PsicologosController::class)->names('api-psicologos');
 Route::apiResource('usuarios', UsuariosController::class)->names('api-usuarios');
