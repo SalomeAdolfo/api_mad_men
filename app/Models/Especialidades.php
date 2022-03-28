@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Especialidades extends Model
 {
-    use HasFactory;
+    protected $table = 'especialidades';
+    public $timestamps = false;
+     protected $fillable = [
+        'especialidad'
+     ];
+
+     public static function reglasValidacion(){
+        return[
+            'especialidad' => 'required'
+        ];
+     }
 }

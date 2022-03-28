@@ -20,8 +20,6 @@ return new class extends Migration
             $table->unsignedBigInteger('usuario_id');
             $table->unsignedBigInteger('psicologo_id');
 
-            $table->foreign('usuario_id')->references('id')->on('users');
-            $table->foreign('psicologo_id')->references('id')->on('psicologos');
         });
     }
 
