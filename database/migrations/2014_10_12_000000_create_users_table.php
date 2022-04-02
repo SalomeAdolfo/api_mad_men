@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('numero_telefono',10);
             $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedBigInteger('direccion_id');
             $table->rememberToken();
             $table->timestamps();
 

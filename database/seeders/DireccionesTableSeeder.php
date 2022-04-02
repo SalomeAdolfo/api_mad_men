@@ -23,6 +23,7 @@ class DireccionesTableSeeder extends Seeder
                 'codigo_postal'=> '52085',
                 'numero_interior' => '18',
                 'numero_exterior' => 'N/A',
+                'id_usuario' => 1
             ],
             [
                 'estado'=>'México',
@@ -31,23 +32,8 @@ class DireccionesTableSeeder extends Seeder
                 'codigo_postal'=> '52085',
                 'numero_interior' => '18',
                 'numero_exterior' => 'N/A',
-            ],
-            [
-                'estado'=>'México',
-                'municipio' => 'Otzolotepec',
-                'calle'=> 'José',
-                'codigo_postal'=> '52085',
-                'numero_interior' => '18',
-                'numero_exterior' => 'N/A',
-            ],
-            [
-                'estado'=>'México',
-                'municipio' => 'Otzolotepec',
-                'calle'=> 'Francisco i Madero',
-                'codigo_postal'=> '52085',
-                'numero_interior' => '18',
-                'numero_exterior' => 'N/A',
-            ],
+                'id_usuario' => 2
+            ]
         ]);
     }
 }

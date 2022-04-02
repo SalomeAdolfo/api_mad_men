@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('codigo_postal',5);
             $table->string('numero_interior',5);
             $table->string('numero_exterior',5);
+            $table->unsignedBigInteger('id_usuario');
         });
     }
 

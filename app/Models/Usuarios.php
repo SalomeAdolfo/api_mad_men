@@ -18,7 +18,6 @@ class Usuarios extends Model
         'numero_telefono',
         'email',
         'password',
-        'direccion_id'
     ];
     public static function reglasValidacion()
     {
@@ -31,7 +30,7 @@ class Usuarios extends Model
             'numero_telefono' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'direccion_id' => 'required',
+            
         ];
     }
     public static function etiquetas()
@@ -45,7 +44,6 @@ class Usuarios extends Model
             'numero_telefono' => 'numero_telefono',
             'email' => 'email',
             'password' => 'password',
-            'direccion_id' => 'direccion_id'
         ];
     }
 }

@@ -26,7 +26,6 @@ class UsersTableSeeder extends Seeder
             'numero_telefono'=> '7221867556',
             'email'=>'grenaslocas@gmail.com',
             'password'=>bcrypt('12345678'),
-            'direccion_id'=>3
         ],
         [
             'name' => 'Oliver',
@@ -37,7 +36,6 @@ class UsersTableSeeder extends Seeder
             'numero_telefono'=> '7221867555',
             'email'=>'olibaby@gmail.com',
             'password'=>bcrypt('12345678'),
-            'direccion_id'=>4
         ],
         ]);
     }
